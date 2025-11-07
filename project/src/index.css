@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 美日搜達品牌色 */
+    --primary-color: #A8D8EA;      /* 淺藍色 */
+    --secondary-color: #FFB6C1;    /* 粉紅色 */
+    --bg-light-blue: #E3F2FD;      /* 背景淺藍 */
+    --bg-light-pink: #FFE4E9;      /* 背景淺粉 */
+  }
+}
+
+@layer utilities {
+  /* Brand colors */
+  .bg-brand-blue {
+    background-color: var(--primary-color);
+  }
+
+  .bg-brand-pink {
+    background-color: var(--secondary-color);
+  }
+
+  .bg-brand-light-blue {
+    background-color: var(--bg-light-blue);
+  }
+
+  .bg-brand-light-pink {
+    background-color: var(--bg-light-pink);
+  }
+
+  .text-brand-blue {
+    color: var(--primary-color);
+  }
+
+  .text-brand-pink {
+    color: var(--secondary-color);
+  }
+
+  .border-brand-blue {
+    border-color: var(--primary-color);
+  }
+
+  .border-brand-pink {
+    border-color: var(--secondary-color);
+  }
+
+  /* Smooth animations */
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .animate-pulse-once {
+    animation: pulseOnce 0.6s ease-in-out;
+  }
+
+  /* Smooth transitions */
+  .transition-all-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-transform-smooth {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes pulseOnce {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
